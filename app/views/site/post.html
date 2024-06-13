@@ -1,0 +1,66 @@
+{% extends "site/master.html" %}
+
+{% block content %}
+    <div class="container">
+        {% for item in post %}
+        <h2>{{ item.titulo }}</h2>
+        <p style="color: #817d7d; font-size: 2vh;">Última modificação em: {{ item.created_at }}</p>
+        <hr>
+        <div class="row">
+            <p class="col-sm-12 col-md-6">{{ item.problema }}<br><br>{{item.tentado}}</p>
+            <p class="col-sm-12 col-md-2"></p>
+        </div>
+
+        <form action="/comentar" method="POST" style="border: 1px solid #D6D9DC; border-radius: 0.5vh; padding: 4vh; background-color: white; margin-bottom: 5vh" class="col-12 col-sm-8 col-md-8">
+            <div class="mb-3">
+                <!-- Campo oculto para armazenar o ID do post -->
+                <input type="hidden" id="post_id" name="post_id" value="{{ item.post_id }}">
+                <label for="exampleFormControlTextarea1" class="form-label mt-3" style="font-weight: 600; margin-bottom: 0;">Adicionar comentário</label>
+                <textarea class="form-control" name="comentar" id="exampleFormControlTextarea1" rows="3"></textarea>
+                {{messages['comentar']['message']|message(messages['comentar']['alert'])|raw}}
+                <button class="btn btn-primary mt-5" type="submit">Comentar</button>
+            </div>
+        </form>
+
+        <h4>Comentários</h4>
+        <div id="comentarios"></div>
+    </div>
+
+    <script>
+        const user = {{ user|json_encode|raw }};
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const post_id = document.getElementById('post_id').value;
+            const comentariosContainer = document.getElementById('comentarios');
+
+            fetch(`/post/${post_id}/json`)
+                .then(response => response.json())
+                .then(comentarios => {
+                    comentarios.forEach(comentario => {
+                        const date = new Date(comentario.created_at);
+                        const day = String(date.getDate()).padStart(2, '0');
+                        const month = String(date.getMonth() + 1).padStart(2, '0');
+                        const year = date.getFullYear();
+                        const formattedDate = `${day}/${month}/${year}`;
+
+                        const comentElement = document.createElement('div');
+                        comentElement.innerHTML = `
+                            <hr>
+                            <p style="color: #1B75D0; font-weight: 500;">${comentario.nome}</p>
+                            <p style="font-weight: 400;">${comentario.comentario}</p>
+                            <p style="color: #636B74;">Feito em: ${formattedDate}</p>
+                        `;
+                        if (user.id == comentario.id_pessoa || user.perfil.admin == 1) {
+                            comentElement.innerHTML += `<form action="/comentario/delete/${comentario.id_coment}" method="POST" style="display: inline-block;">
+                                                                <input type="hidden" name="_METHOD" value="DELETE">
+                                                                <button type="submit" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></button>
+                                                    </form>`;
+                        }
+                        comentariosContainer.appendChild(comentElement);
+                    });
+                })
+                .catch(error => console.error('Erro ao buscar os comentarios:', error));
+        });
+    </script>
+{% endfor %}
+{% endblock %}

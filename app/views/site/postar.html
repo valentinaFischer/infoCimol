@@ -1,0 +1,56 @@
+{% extends "site/master.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="mb-4">Pergunte Algo!</h2>
+
+    <div class="d-flex fd-column js-write-question-notice mb-3">
+        <div class="w100 mt16">
+            <div class="d-flex w100 ai-center mb16 md:mt0">
+                <div class="s-notice s-notice__info p24 w70 lg:w100" style="background-color: #EDF5FD; padding: 6vh; border: 1px solid #86acd4; border-radius: 0.5vh;">
+                    <h2 class="fs-title fw-normal mb8">Escrevendo uma boa pergunta</h2>
+                    <p class="fs-body2 mb0">
+                       Você quer resolver algo relacionado à informática e esse formulário o ajudará com isso.
+                    </p>
+                    <h5 class="fw-bold mb8">Passos</h5>
+                    <ul class="mb0">
+                        <li>Resuma seu problema em um título de uma linha.</li>
+                        <li>Descreva seu problema com mais detalhes.</li>
+                        <li>Descreva o que você tentou e o que esperava que fosse acontecer.</li>
+                        <li>Adicione "tags", as quais ajudam os membros da comunidade.</li>
+                        <li>Revise sua pergunta e poste!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--FORM-->
+    <form action="/postar" method="POST" style="border: 1px solid #D6D9DC; border-radius: 0.5vh; padding: 4vh; background-color: white; margin-bottom: 5vh" class="col-12 col-sm-8 col-md-8">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label" style="font-weight: 600; margin-bottom: 0;">Título</label>
+            <p style="font-size: 2vh;">Seja específico e imagine estar explicando a outra pessoa</p>
+            <input type="text" name="titulo" class="form-control" id="exampleFormControlInput1" placeholder="ex.: Problema de segurança ao configurar SSL no servidor Apache">
+            {{messages['titulo']['message']|message(messages['titulo']['alert'])|raw}}
+
+            <label for="exampleFormControlTextarea1" class="form-label mt-3" style="font-weight: 600; margin-bottom: 0;">Quais são os detalhes do seu problema?</label>
+            <p style="font-size: 2vh;">Introduza o problema e elabore o que você colocou no título</p>
+            <textarea class="form-control" name="problema" id="exampleFormControlTextarea1" rows="3"></textarea>
+            {{messages['problema']['message']|message(messages['problema']['alert'])|raw}}
+
+            <label for="exampleFormControlTextarea1" class="form-label mt-3" style="font-weight: 600; margin-bottom: 0;">O que você já tentou?</label>
+            <p style="font-size: 2vh;">Descreva o que você tentou, o que era para acontecer, e o que aconteceu</p>
+            <textarea class="form-control" name="tentado" id="exampleFormControlTextarea1" rows="3"></textarea>
+            {{messages['tentado']['message']|message(messages['tentado']['alert'])|raw}}
+
+
+            <!--<label for="formFileMultiple" class="form-label mt-3" style="font-weight: 600;">Faça upload de imagens aqui</label>
+            <input class="form-control" type="file" id="formFileMultiple" multiple>-->
+            
+            <button class="btn btn-primary mt-5" type="submit">Postar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

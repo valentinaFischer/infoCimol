@@ -1,0 +1,32 @@
+{% extends "site/master.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="mb-3">Login</h2>
+
+    {% if is_logged %}
+        Você já está logado(a)
+    {% endif %}
+
+    <form action="/login" method="post">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 mb-3">
+                <input type="text" name="email" class="form-control" placeholder="Email">
+                {{ messages['email']['message']|message(messages['email']['alert'])|raw }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 mb-3">
+                <input type="password" name="senha" class="form-control" placeholder="Senha">
+                {{messages['senha']['message']|message(messages['senha']['alert'])|raw}}
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="btn-create">Entrar</button>
+    </form>
+
+    {{messages['message']['message']|message(messages['message']['alert'])|raw}}
+</div>
+
+{% endblock %}
