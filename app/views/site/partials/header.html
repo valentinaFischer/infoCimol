@@ -1,16 +1,51 @@
-<nav class="navbar navbar-expand-lg mb-5" style="background-color: #080808;" data-bs-theme="dark">
-  <div class="container">
-    <a class="navbar-brand me-auto" href=""><img src="{{ logo_path }}" style="width: 8vw; margin: 0; padding: 0;" alt="Logo do site"></a>
-      <ul class="navbar-nav mb-2 mb-lg-0">
+<nav class="navbar navbar-expand-lg navbar-dark mb-5" style="background-color: #005358;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{{ info_path }}" alt="Bootstrap" width="30" height="24">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left: 5vw;">
         <li class="nav-item">
-          {% if is_logged_in %}
-            <a href="/logout" class="nav-link active btn btn-danger" style="padding: 1vh;" aria-current="page">Logout</a>
-          {% else %}
-            <a class="nav-link active btn btn-primary" style="padding: 1vh;" aria-current="page" href="/login">Login</a>
-          {% endif %}
+          <a class="nav-link active" aria-current="page" href="pages/home.php" style="font-size: 1.2em;">Inicio</a>
+        </li>
+        <li class="nav-item" style="display: flex;
+    justify-content: center;
+    align-items: center;">
+          <a class="nav-link" style="font-size: 1.2em;" href="https://semanadainformatica.infocimol.com.br/" target="_NEW">Semana da
+            Informática</a>
+        </li>
+        <li class="nav-item" style="display: flex;
+    justify-content: center;
+    align-items: center;">
+          <a class="nav-link" style="font-size: 1.2em;" href="pages/blog.php">Blog</a>
+        </li>
+        <li class="nav-item" style="display: flex;
+    justify-content: center;
+    align-items: center;">
+          <a class="nav-link" style="font-size: 1.2em;" href="pages/sobre.php">Sobre</a>
+        </li>
+        <li class="nav-item" style="display: flex;
+    justify-content: center;
+    align-items: center;">
+          <a class="nav-link" style="font-size: 1.2em;" href="pages/contato.php">Contato</a>
         </li>
       </ul>
+      <div class="d-flex">
+        <img src="{{ cimol_path }}" alt="">
+      </div>
+    </div>
+
   </div>
 </nav>
 
-
+      <!--
+      { if is_logged_in %}
+            <a href="/logout" class="nav-link active btn btn-danger" style="padding: 1vh;" aria-current="page">Logout</a>
+          { else %}
+            <a class="nav-link active btn btn-primary" style="padding: 1vh;" aria-current="page" href="/login">Login</a>
+          { endif %}
+      -->

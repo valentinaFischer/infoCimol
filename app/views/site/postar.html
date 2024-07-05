@@ -5,9 +5,9 @@
 <div class="container">
     <h2 class="mb-4">Pergunte Algo!</h2>
 
-    <div class="d-flex fd-column js-write-question-notice mb-3">
+    <div class="ajuste fd-column js-write-question-notice mb-3">
         <div class="w100 mt16">
-            <div class="d-flex w100 ai-center mb16 md:mt0">
+            <div class="ajuste w100 ai-center mb16 md:mt0">
                 <div class="s-notice s-notice__info p24 w70 lg:w100" style="background-color: #EDF5FD; padding: 6vh; border: 1px solid #86acd4; border-radius: 0.5vh;">
                     <h2 class="fs-title fw-normal mb8">Escrevendo uma boa pergunta</h2>
                     <p class="fs-body2 mb0">
@@ -27,7 +27,7 @@
     </div>
 
     <!--FORM-->
-    <form action="/postar" method="POST" style="border: 1px solid #D6D9DC; border-radius: 0.5vh; padding: 4vh; background-color: white; margin-bottom: 5vh" class="col-12 col-sm-8 col-md-8">
+    <form action="/postar" method="POST" style="border: 1px solid #D6D9DC; border-radius: 0.5vh; padding: 4vh; background-color: white; margin-bottom: 5vh;" class="col-12 col-sm-8 col-md-8 ajuste">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label" style="font-weight: 600; margin-bottom: 0;">Título</label>
             <p style="font-size: 2vh;">Seja específico e imagine estar explicando a outra pessoa</p>
@@ -53,4 +53,5 @@
     </form>
 </div>
 
+{% include "site/partials/footer.html" %}
 {% endblock %}
