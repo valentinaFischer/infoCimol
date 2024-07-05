@@ -19,6 +19,10 @@ $app = AppFactory::create();
 TwigGlobal::set('is_logged_in', $_SESSION['is_logged_in'] ?? '');
 TwigGlobal::set('user', $_SESSION['user_logged_data'] ?? '');
 TwigGlobal::set('logo_path', $_ENV['LOGO']);
+TwigGlobal::set('icone_path', $_ENV['ICONE']);
+TwigGlobal::set('info_path', $_ENV['INFO']);
+TwigGlobal::set('cimol_path', $_ENV['CIMOL']);
+TwigGlobal::set('url_path', $_ENV['URL']);
 
 require '../app/helpers/config.php';
 require '../app/helpers/redirect.php';

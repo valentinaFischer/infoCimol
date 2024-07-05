@@ -1,3 +1,272 @@
-body {
-    background-color: #F9FAFA;
+#alert
+{
+    margin-top: 5vh;
 }
+
+footer{
+    background-color: #005358;
+    color: #fff;
+}
+footer p{
+    margin-top: 3vh;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.col{
+    margin: 5vh 0;
+    width: 400px;
+
+}
+.col img{
+    width: 300px;
+}
+.col-4 img:hover{
+    cursor: pointer;
+}
+.center{
+    text-align: center;
+}
+p{
+    margin: 0;
+    font-size: 1em;
+}
+h5{
+    margin: 3vh 0;
+}
+.col-4 img{
+    width: 70%;
+}
+
+.table{
+    margin-top: 8vh;
+}
+.navbar-brand,.d-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100px;
+    /* margin-left: vw; */
+}
+
+.navbar-brand img {
+    width: 30;
+    height: 24;
+}
+
+.d-flex img {
+    width: 100px;
+}
+
+.ajuste {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar-brand img{
+    width: 100%;
+    height: auto;
+}
+.d-flex img{
+    width: 100%;
+    height: auto;
+}
+.collapse ul li a{
+    margin: 0 3vw;
+}
+nav{
+    background-color: #005358;
+}
+.navbar-nav{
+    padding-left: 5vw;
+}
+.navbar-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-link{
+    font-size: 1.2em;
+}
+.mapa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15vh 0;
+}
+.formulario{
+    margin: 3vh 0;
+    display: flex;
+}
+.bloco1,.bloco2{
+    /* background-color: blue; */
+    margin: 0 2vw;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 2vw;
+}
+.bloco1{
+    width: 60vw;
+}
+.bloco2{
+    width: 40vw;
+}
+.itens{
+    width: 100%;
+}
+label{
+    margin-top: 1vh;
+    font-weight: bold;
+}
+.item{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+.descricao{
+    margin-bottom: 1vh;
+}
+.left{
+    margin-right: 4%;
+}
+.item input{
+    width: 100%;
+    border: none;
+    outline: 0;
+    border-bottom: 3px solid ;
+    padding-top: 2vh;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+}
+textarea{
+    padding-top: 2vh;
+    border: none;
+    outline: 0;
+    border-bottom: 3px solid ;
+}
+.container-button{
+    display: flex;
+    justify-content: right;
+    
+}
+.button{
+    margin-top: 3vh;
+    width: 100px;
+    border: none;
+    padding: 1vh 2vw;
+    background-color: #005358;
+    color: #fff;
+}
+
+h2{
+    margin: 8vh 0 0 3vw;
+}
+.ph{
+    margin: 1vh 0;
+}
+.video{
+    width: 100%;
+    background-color: #000518;
+    display: flex;
+    justify-content: center;
+}
+.video .iframe{
+    width: 70%;
+}
+
+.banner{
+    margin-top: 12vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner img{
+    width: 80%;
+}
+.text{
+    
+    font-size: 1.5em;    
+    text-align: justify;
+}
+.grade{
+    margin-top: 10vh;
+}
+
+.introducao{
+    background-color: #036D74;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.introducao p{
+    width: 80%;
+    margin: 9vh 0;
+    color: #fff;
+
+}
+.aguarde{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:62vh;
+}
+.aguarde img{
+    width: 60%;
+}
+
+.contact{
+    margin: 0;
+}
+
+.buttons{
+    margin-bottom: 5vh;
+}
+.estagio{
+    font-size: 1.5em;    
+    text-align: justify;
+}
+.error{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.error img{
+    width: 40%;
+}
+
+@media screen and (max-width: 720px) {    
+    .video .iframe{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .formulario{
+        display: flex;
+        flex-direction: column;
+    }
+    .bloco1, .bloco2{
+        width: 90vw;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    .collapse ul li a{
+        margin: 0;
+    }
+    .d-flex img{
+        display: none;
+    }
+
+  }
